@@ -1,0 +1,39 @@
+## OS and Utility Stuff ##
+.DS_Store
+.Spotlight-V100
+.Trashes
+*~
+.svn
+.svnignore
+.cvs
+*.bak
+*.swp
+*.sql
+*.ico
+*.xml
+*.log
+.thumbs
+Thumbs.db
+desktop.ini
+
+# IDE Stuff
+
+## phpStorm
+/.idea
+.idea
+
+## SublimeText
+*.sublime-workspace
+*.sublime-project
+
+# Project Stuff
+deploy.sh
+
+## Common Web Site Files ##
+!.gitignore
+.htaccess
+archive/
+build/
+debug/
+sitemap.xml.gz
+sitemap.xml
