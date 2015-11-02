@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RODIVIALL_VERSION', '20150902.1' );
+define( 'RODIVIALL_VERSION', '20151027.1' );
 define( 'RODIVIALL_CDIR', get_stylesheet_directory() ); // if child, will be the file path, with out backslash
 define( 'RODIVIALL_CURI', get_stylesheet_uri() ); // URL, if child, will be the url to the theme directory, no back slash
 
@@ -30,6 +30,17 @@ function rodiviall_removeHeadLinks() {
 
 add_action( 'init', 'rodiviall_removeHeadLinks' );
 
+
+/**
+ * Add custom style sheet to the HTML Editor
+ **/
+function rodiviall_theme_add_editor_styles() {
+	add_editor_style( 'editor-style.css' );
+}
+
+add_action( 'init', 'rodiviall_theme_add_editor_styles', 99 );
+
+
 /**
  * Load the Parent and Child  Theme CSS.
  * This faster than a css @import
@@ -39,7 +50,7 @@ function rodiviall_theme_enqueue_styles() {
 	wp_enqueue_style( 'rodiviall-child-style', get_stylesheet_uri(), array( 'parent-style' ) );
 }
 
-//add_action( 'wp_enqueue_scripts', 'rotw12_theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'rodiviall_theme_enqueue_styles' );
 
 /**
  * Load a custom.css style sheet, if it exists in a child theme.
@@ -56,17 +67,18 @@ function rodiviall_enqueue_custom_stylesheets() {
 	}
 }
 
-//add_action( 'wp_enqueue_scripts', 'rotw12_enqueue_custom_stylesheets', 11 );
+//add_action( 'wp_enqueue_scripts', 'rodiviall_enqueue_custom_stylesheets', 11 );
 
 /**
  * EXAMPLE:
  * Add google fonts, don't forget to add the to the style.css or custom.css file.
  */
 function rodiviall_add_google_fonts() {
-	wp_register_style( 'rotw12-googleFonts', 'http://fonts.googleapis.com/css?family=Lato' );
-	//wp_register_style('tw12-googleFonts', 'http://fonts.googleapis.com/css?family=Montserrat');
-	wp_enqueue_style( 'rotw12-googleFonts' );
+	wp_register_style( 'rodiviall-googleFonts', 'http://fonts.googleapis.com/css?family=Lato' );
+	//wp_register_style('rodiviall-googleFonts', 'http://fonts.googleapis.com/css?family=Montserrat');
+	wp_enqueue_style( 'rodiviall-googleFonts' );
 }
+
 //add_action( 'wp_print_styles', 'rodiviall_add_google_fonts' );
 
 
@@ -95,5 +107,29 @@ function rodiviall_enqueue_awesome() {
 }
 
 //add_action( 'wp_enqueue_scripts', 'rodiviall_enqueue_awesome' );
+
+
+if ( ! function_exists( 'et_pb_resources_meta_box' ) ) :
+	function et_pb_resources_meta_box() {
+		global $post;
+
+		?>
+
+		<div class="et_project_meta">
+			<strong class="et_project_meta_title"><?php echo esc_html__( 'Resource', 'Divi' ); ?></strong>
+
+			<p><a href="<?php echo get_metadata( 'post', $post->ID, "rone_resource_link_url", true ); ?>" target="_blank"> <?php echo get_metadata( 'post', $post->ID, "rone_resource_link_url", true ); ?></a></p>
+
+			<strong class="et_project_meta_title"><?php echo esc_html__( 'Category', 'Divi' ); ?></strong>
+
+			<p><?php echo get_the_term_list( get_the_ID(), 'resource-categories', '', ', ' ); ?></p>
+
+			<strong class="et_project_meta_title"><?php echo esc_html__( 'Posted on', 'Divi' ); ?></strong>
+
+			<p><?php echo get_the_date(); ?></p>
+		</div>
+	<?php }
+endif;
+
 
 ?>
