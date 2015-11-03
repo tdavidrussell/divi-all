@@ -6,6 +6,10 @@
   \- Bug fixed   
   ! Known issue / missing feature   
 
+####20151103.1
+ \* Changed: added the Logo image back to the header, created new child theme divi-all-nl without the logo
+ 
+ 
 #### 20151027.1
  \* Added: archive-resources.php
  \* Added: single-resources.php
