@@ -6,6 +6,9 @@
   \- Bug fixed   
   ! Known issue / missing feature   
 
+####20160105.1
+ \* Updated: readme
+ 
 ####20151103.1
  \* Changed: added the Logo image back to the header, created new child theme divi-all-nl without the logo
  
