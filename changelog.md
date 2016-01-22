@@ -6,6 +6,9 @@
   \- Bug fixed   
   ! Known issue / missing feature   
 
+####20160108.1
+* Updated: PHPDoc description for files
+
 ####20160105.1
  \* Updated: readme
  

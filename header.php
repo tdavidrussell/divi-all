@@ -1,6 +1,16 @@
-<?php if ( ! isset( $_SESSION ) ) {
+<?php
+/**
+ *
+ * @category            WordPress_Theme
+ * @package             Divi_All
+ * @subpackage          theme
+ */
+
+
+if ( ! isset( $_SESSION ) ) {
 	session_start();
-} ?>
+}
+?>
 <!DOCTYPE html>
 <!--[if IE 6]>
 <html id="ie6" <?php language_attributes(); ?>>

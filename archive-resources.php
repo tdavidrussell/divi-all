@@ -1,4 +1,15 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Page for the RO Resources plugin
+ *
+ * @category            WordPress_Theme
+ * @package             Divi_All
+ * @subpackage          theme
+ */
+
+
+get_header();
+?>
 
 	<div id="main-content">
 		<div class="container">

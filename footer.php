@@ -1,8 +1,10 @@
 <?php
 /*
  * This Divi child theme file modifies Divi Theme v2.5 footer links starting at line 45 below.
- * Author:   Tim Russell http://timrussell.com
- * Creation date Sept 2, 2015
+ *
+ * @category            WordPress_Theme
+ * @package             Divi_All
+ * @subpackage          theme
  */
 
 
