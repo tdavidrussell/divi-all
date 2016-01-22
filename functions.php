@@ -1,12 +1,11 @@
 <?php
-
 /**
  * Child Theme Functions
  *
  * Functions or examples that may be used in a child them. Don't for get to edit them, to get them working.
  *
  * @link https://make.wordpress.org/core/handbook/inline-documentation-standards/php-documentation-standards/#6-file-headers
- * @since 20150711.1
+ * @since 20151111.1
  *
  * @category            WordPress_Theme
  * @package             Divi_All
@@ -16,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RODIVIALL_VERSION', '20160105.1' );
+define( 'RODIVIALL_VERSION', '20160108.1' );
 define( 'RODIVIALL_CDIR', get_stylesheet_directory() ); // if child, will be the file path, with out backslash
 define( 'RODIVIALL_CURI', get_stylesheet_uri() ); // URL, if child, will be the url to the theme directory, no back slash
 
@@ -66,7 +65,6 @@ function rodiviall_enqueue_custom_stylesheets() {
 		}
 	}
 }
-
 //add_action( 'wp_enqueue_scripts', 'rodiviall_enqueue_custom_stylesheets', 11 );
 
 /**
@@ -96,19 +94,21 @@ add_action( 'after_setup_theme', 'rodiviall_theme_setup' );
 */
 
 
+//add_action( 'wp_enqueue_scripts', 'ragingone_enqueue_font_awesome' );
 /**
  * Register and load font awesome CSS files using a CDN.
  *
  * @link   http://www.bootstrapcdn.com/#fontawesome
  * @author FAT Media
  */
-function rodiviall_enqueue_awesome() {
-	wp_enqueue_style( 'rodiviall-font-awesome', 'http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
+function ragingone_enqueue_font_awesome() {
+	wp_enqueue_style( 'rone-font-awesome', 'http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0' );
 }
 
-//add_action( 'wp_enqueue_scripts', 'rodiviall_enqueue_awesome' );
 
-
+/**
+ * for the RO Resources Plugin
+ */
 if ( ! function_exists( 'et_pb_resources_meta_box' ) ) :
 	function et_pb_resources_meta_box() {
 		global $post;
