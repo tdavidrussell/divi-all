@@ -15,69 +15,97 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RODIVIALL_VERSION', '20160108.1' );
+define( 'RODIVIALL_VERSION', '20160122.1' );
 define( 'RODIVIALL_CDIR', get_stylesheet_directory() ); // if child, will be the file path, with out backslash
 define( 'RODIVIALL_CURI', get_stylesheet_uri() ); // URL, if child, will be the url to the theme directory, no back slash
 
-remove_action( 'wp_head', 'wp_generator' );
+/**
+ * By default WordPress adds all sorts of code between the opening and closing head tags of a WordPress theme
+ * So lets clean out some of them
+ *
+ */
+function ro_remove_head_links() {
 
-// Clean up the <head>
-function rodiviall_removeHeadLinks() {
-	remove_action( 'wp_head', 'rsd_link' );
-	remove_action( 'wp_head', 'wlwmanifest_link' );
+	/** remove some header information  **/
+	remove_action( 'wp_head', 'feed_links_extra', 3 );  //category feeds
+	remove_action( 'wp_head', 'feed_links', 2 );        //post and comments feed, see ro_enqueue_default_feed_link()
+	remove_action( 'wp_head', 'rsd_link' );              //only required if you are looking to blog using an external tool
+	remove_action( 'wp_head', 'wlwmanifest_link' );      //something to do with windows live writer
+	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 ); //next previous post links
+	remove_action( 'wp_head', 'wp_generator' );          //generator tag ie WordPress version info
+	remove_action( 'wp_head', 'wp_shortlink_wp_head' );  //short links like ?p=124
+
+
 }
 
-add_action( 'init', 'rodiviall_removeHeadLinks' );
+add_action( 'init', 'ro_remove_head_links' );
 
+/**
+ * above we remove all feed (RSS) links lets put them back, for post content.
+ * in ro_remove_head_links() we had to remove the post and comments rss link
+ * now we want to add rss back just for post content
+ * because feed_links() adds both the comments and posts feeds
+ *
+ * @see ro_remove_head_links()
+ */
+function ro_enqueue_default_feed_link() {
+	echo "<link rel='alternate' type='application/rss+xml' title='" . get_bloginfo( 'name' ) . " &raquo; Feed' href='" . get_feed_link() . "' />";
+}
+
+add_action( 'wp_head', 'ro_enqueue_default_feed_link' );
 
 /**
  * Add custom style sheet to the HTML Editor
  **/
-function rodiviall_theme_add_editor_styles() {
-	add_editor_style( 'editor-style.css' );
+function ro_enqueue_editor_styles() {
+	//add_editor_style( 'editor-style.css' );
+	if ( file_exists( get_stylesheet_directory() . "/editor-style.css" ) ) {
+		add_editor_style( 'editor-style.css' );
+	}
 }
 
-add_action( 'init', 'rodiviall_theme_add_editor_styles', 99 );
+add_action( 'init', 'ro_enqueue_editor_styles' );
 
 
 /**
  * Load the Parent and Child  Theme CSS.
  * This faster than a css @import
  */
-function rodiviall_theme_enqueue_styles() {
-	wp_enqueue_style( 'rodiviall-parent-style', get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style( 'rodiviall-child-style', get_stylesheet_uri(), array( 'parent-style' ) );
+function ro_theme_enqueue_styles() {
+	wp_enqueue_style( 'ro-parent-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'ro-child-style', get_stylesheet_uri(), array( 'ro-parent-style' ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'rodiviall_theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'ro_theme_enqueue_styles' );
 
 /**
  * Load a custom.css style sheet, if it exists in a child theme.
  *
  * @return void
  */
-function rodiviall_enqueue_custom_stylesheets() {
+function ro_enqueue_custom_stylesheets() {
 	if ( ! is_admin() ) {
 		if ( is_child_theme() ) {
 			if ( file_exists( get_stylesheet_directory() . "/custom.css" ) ) {
-				wp_enqueue_style( 'rotw12-theme-custom-css', get_template_directory_uri() . '/custom.css' );
+				wp_enqueue_style( 'ro-custom-css', get_template_directory_uri() . '/custom.css' );
 			}
 		}
 	}
 }
-//add_action( 'wp_enqueue_scripts', 'rodiviall_enqueue_custom_stylesheets', 11 );
+
+//add_action( 'wp_enqueue_scripts', 'ro_enqueue_custom_stylesheets', 11 );
 
 /**
  * EXAMPLE:
  * Add google fonts, don't forget to add the to the style.css or custom.css file.
  */
-function rodiviall_add_google_fonts() {
-	wp_register_style( 'rodiviall-googleFonts', 'http://fonts.googleapis.com/css?family=Lato' );
-	//wp_register_style('rodiviall-googleFonts', 'http://fonts.googleapis.com/css?family=Montserrat');
-	wp_enqueue_style( 'rodiviall-googleFonts' );
+function ro_add_google_fonts() {
+	wp_register_style( 'ro-googleFonts', 'http://fonts.googleapis.com/css?family=Lato' );
+	//wp_register_style('ro-googleFonts', 'http://fonts.googleapis.com/css?family=Montserrat');
+	wp_enqueue_style( 'ro-googleFonts' );
 }
 
-//add_action( 'wp_print_styles', 'rodiviall_add_google_fonts' );
+//add_action( 'wp_print_styles', 'ro_add_google_fonts' );
 
 
 /**
@@ -87,24 +115,41 @@ function rodiviall_add_google_fonts() {
  * Translations can be filed in the /languages/ directory.
  */
 /*
-function rodiviall_theme_setup() {
-	load_child_theme_textdomain( 'rotw12-child-theme', get_stylesheet_directory() . '/languages' );
+function ro_theme_setup() {
+	load_child_theme_textdomain( 'ro-child-theme', get_stylesheet_directory() . '/languages' );
 }
-add_action( 'after_setup_theme', 'rodiviall_theme_setup' );
+add_action( 'after_setup_theme', 'ro_theme_setup' );
 */
 
 
-//add_action( 'wp_enqueue_scripts', 'ragingone_enqueue_font_awesome' );
 /**
  * Register and load font awesome CSS files using a CDN.
  *
  * @link   http://www.bootstrapcdn.com/#fontawesome
  * @author FAT Media
  */
-function ragingone_enqueue_font_awesome() {
-	wp_enqueue_style( 'rone-font-awesome', 'http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0' );
+function ro_enqueue_font_awesome() {
+	wp_enqueue_style( 'ro-font-awesome', 'http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0' );
 }
+//add_action( 'wp_enqueue_scripts', 'ro_enqueue_font_awesome' );
 
+
+/**
+ * add custom login css and js for a single site, not multi site
+ * @link https://codex.wordpress.org/Customizing_the_Login_Form
+ *
+ */
+function ro_enqueue_login_scripts() {
+	if ( is_child_theme() ) {
+		if ( file_exists( get_stylesheet_directory() . "/css/custom-login.css" ) ) {
+			wp_enqueue_style( 'ro-custom-login-css', get_stylesheet_directory_uri() . '/css/custom-login.css' );
+		}
+		if ( file_exists( get_stylesheet_directory() . "/js/custom-login.js" ) ) {
+			wp_enqueue_script( 'ro-custom-login-js', get_stylesheet_directory_uri() . '/js/custom-login.js' );
+		}
+	}
+}
+//add_action( 'login_enqueue_scripts', 'ro_enqueue_login_scripts' );
 
 /**
  * for the RO Resources Plugin
