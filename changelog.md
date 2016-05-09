@@ -6,10 +6,14 @@
   \- Bug fixed   
   ! Known issue / missing feature   
 
-####20160108.1
+#### 20160509.1
+* Changed: Change the Gallery image orientation
+* Update: code cleanup and version bump
+
+#### 20160108.1
 * Updated: PHPDoc description for files
 
-####20160105.1
+#### 20160105.1
  \* Updated: readme
  
 ####20151103.1
