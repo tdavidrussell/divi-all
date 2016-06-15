@@ -6,6 +6,9 @@
   \- Bug fixed   
   ! Known issue / missing feature   
 
+#### 20160615.1
+* code cleanup and testing
+
 #### 20160509.1
 * Changed: Change the Gallery image orientation
 * Update: code cleanup and version bump
