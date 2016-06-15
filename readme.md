@@ -5,7 +5,7 @@ __Contributors:__
 * Tim Russell [Web](http://timrussell.com) / [GitHub](https://github.com/tdavidrussell) / [Bitbucket](https://bitbucket.com/tdavidrussell)    
 
 __Requires:__ 3.9.0   
-__Tested up to:__ 4.4   
+__Tested up to:__ 4.5.2
 __License:__ [GPL-2.0+](http://www.gnu.org/licenses/gpl-2.0.html)
 __[Project Page](https://github.com/tdavidrussell/divi-all)__   
 

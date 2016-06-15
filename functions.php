@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RODIVIALL_VERSION', '20160509.1' );
+define( 'RODIVIALL_VERSION', '20160615.1' );
 define( 'RODIVIALL_CDIR', get_stylesheet_directory() ); // if child, will be the file path, with out backslash
 define( 'RODIVIALL_CURI', get_stylesheet_uri() ); // URL, if child, will be the url to the theme directory, no back slash
 
@@ -190,14 +190,15 @@ endif;
  *
  * @return string
  */
-function gallery_size_h( $height ) {
+function ro_gallery_size_h( $height ) {
 	return '1280';
 }
 
-add_filter( 'et_pb_gallery_image_height', 'gallery_size_h' );
-function gallery_size_w( $width ) {
+add_filter( 'et_pb_gallery_image_height', 'ro_gallery_size_h' );
+
+function ro_gallery_size_w( $width ) {
 	return '9999';
 }
 
-add_filter( 'et_pb_gallery_image_width', 'gallery_size_w' );
+add_filter( 'et_pb_gallery_image_width', 'ro_gallery_size_w' );
 ?>
