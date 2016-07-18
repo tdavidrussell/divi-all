@@ -6,6 +6,9 @@
   \- Bug fixed   
   ! Known issue / missing feature   
 
+#### 20160718.1
+* Updated: updated the theme description
+
 #### 20160713.1
 * Added: styling for the login widget plugin
 
