@@ -6,6 +6,14 @@
   \- Bug fixed   
   ! Known issue / missing feature   
 
+
+#### 20160806.1
+* Change: changed the css to remove the sidebar border
+* Change: changed the css to remove the header bottom border
+* Added: function to prevent cropping of featured images
+* Added: single.php for the prev/next links fix
+
+
 #### 20160718.1
 * Updated: updated the theme description
 

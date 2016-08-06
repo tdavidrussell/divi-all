@@ -5,6 +5,7 @@
  * @category            WordPress_Theme
  * @package             Divi_All
  * @subpackage          theme
+ * <div class="navigation"><p><?php posts_nav_link(); ?></p></div>
  */
 
 
