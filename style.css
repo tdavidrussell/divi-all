@@ -9,7 +9,7 @@
  * Theme Name:          Divi All
  * Theme URI:           http://timrussell.com/wordpress-themes
  * Description:         Divi All Child Theme. Parent Theme Designed Elegant Themes http://www.elegantthemes.com/.
- * Version:             20160718.1
+ * Version:             20160806.1
  * Author:              Tim Russell
  * Author URI:          http://timrussell.com/
  * License:             GPL-2.0+
@@ -51,11 +51,33 @@
 /** import the parent css **/
 @import url("../Divi/style.css");
 
-
-/** remove the left border, from right-sidebar **/
-.et_pb_widget_area_right {
-    border: none;
+/*
+ * remove border from the left and right sidebar border
+ * @link https://divibooster.com/removing-the-divi-theme-dividing-line/
+ */
+.container:before {
+    background-color: transparent !important;
 }
+
+.et_pb_widget_area_right {
+    border-left: 0 !important;
+}
+
+.et_pb_widget_area_left {
+    border-right: 0 !important;
+}
+
+/*
+ * remove bottom border from the header
+ * @link https://divibooster.com/removing-the-divi-header-bottom-border/
+ */
+/*
+#main-header {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+*/
 
 .et_header_style_centered #logo a {
     color: #f8f8f8 !important;
@@ -118,10 +140,11 @@ a.logo-a {
 /* @link https://wordpress.org/plugins/login-sidebar-widget/
  * login widget start
  */
-#log_forms{
+#log_forms {
     padding-bottom: 3em;
 }
-#log_forms input[type=text], #log_forms input[type=password]{
+
+#log_forms input[type=text], #log_forms input[type=password] {
     height: 40px !important;
     margin: 0;
     padding: 0.7em;
@@ -131,7 +154,8 @@ a.logo-a {
     line-height: normal !important;
     width: 100%;
 }
-#log_forms input[type=submit]{
+
+#log_forms input[type=submit] {
     /*    position: absolute;
         top: 0;
         right: 0;
@@ -154,5 +178,6 @@ a.logo-a {
     border-bottom-right-radius: 3px;
     background-color: #ddd;
 }
+
 /** login widget end */
 

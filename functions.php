@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RODIVIALL_VERSION', '20160718.1' );
+define( 'RODIVIALL_VERSION', '20160806.1' );
 define( 'RODIVIALL_CDIR', get_stylesheet_directory() ); // if child, will be the file path, with out backslash
 define( 'RODIVIALL_CURI', get_stylesheet_uri() ); // URL, if child, will be the url to the theme directory, no back slash
 
@@ -64,7 +64,7 @@ function ro_enqueue_editor_styles() {
 	}
 }
 
-add_action( 'init', 'ro_enqueue_editor_styles' );
+//add_action( 'init', 'ro_enqueue_editor_styles' );
 
 
 /**
@@ -201,4 +201,23 @@ function ro_gallery_size_w( $width ) {
 }
 
 add_filter( 'et_pb_gallery_image_width', 'ro_gallery_size_w' );
+
+
+add_filter( 'max_srcset_image_width', create_function( '', 'return 1;' ) );
+
+
+/**
+ * Stop cropping the height of images
+ * @link https://divibooster.com/stop-divi-from-cropping-feature-post-heights/
+ *
+ */
+add_filter('et_theme_image_sizes', 'yourprefix_remove_featured_post_cropping');
+function yourprefix_remove_featured_post_cropping($sizes) {
+	if (isset($sizes['1080x675'])) {
+		unset($sizes['1080x675']);
+		$sizes['1080x9998'] = 'et-pb-post-main-image-fullwidth';
+	}
+	return $sizes;
+}
+
 ?>
