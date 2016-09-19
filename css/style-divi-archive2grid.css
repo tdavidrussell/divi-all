@@ -1,0 +1,64 @@
+/** display archive and categories as grid **/
+.archive #sidebar, .category #sidebar, .blog #sidebar {
+    display: none;
+}
+
+.archive #main-content .container:before, .category #main-content .container:before, .blog #main-content .container:before {
+    display: none;
+}
+
+.archive #left-area, .category #left-area, .blog #left-area {
+    width: 100%;
+    padding-right: 0;
+}
+
+.archive .et_pb_post, .category .et_pb_post, .blog .et_pb_post {
+    background-color: #fff;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 28%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    float: left;
+}
+
+.archive .et_pb_post p { /* display: none; */
+}
+
+/* landscape Tablets */
+@media ( min-width: 981px ) and ( max-width: 1099px ) {
+    .archive .et_pb_post, .category .et_pb_post, .blog .et_pb_post {
+        width: 45% !important;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+    }
+}
+
+/* Portrait Tablets*/
+@media ( min-width: 768px ) and ( max-width: 980px ) {
+    .archive .et_pb_post, .category .et_pb_post, .blog .et_pb_post {
+        width: 45% !important;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+    }
+}
+
+/* Landscape Phones */
+@media ( min-width: 480px ) and ( max-width: 767px ) {
+    .archive .et_pb_post, .category .et_pb_post, .blog .et_pb_post {
+        width: 95% !important;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+    }
+}
+
+/* Portrait Phones */
+@media ( max-width: 479px ) {
+    .archive .et_pb_post, .category .et_pb_post, .blog .et_pb_post {
+        width: 95% !important;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+    }
+}

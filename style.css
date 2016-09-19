@@ -9,7 +9,7 @@
  * Theme Name:          Divi All
  * Theme URI:           http://timrussell.com/wordpress-themes
  * Description:         Divi All Child Theme. Parent Theme Designed Elegant Themes http://www.elegantthemes.com/.
- * Version:             20160806.1
+ * Version:             20160808.1
  * Author:              Tim Russell
  * Author URI:          http://timrussell.com/
  * License:             GPL-2.0+
@@ -50,134 +50,13 @@
 */
 /** import the parent css **/
 @import url("../Divi/style.css");
+@import url("css/style-divi.css");
+/* @import url("css/style-divi-archive2grid.css"); */
+@import url("css/style-divi-header-noborder.css");
+/* @import url("css/style-divi-single-fullwidth.css"); */
+@import url("css/style-plugin-roresources.css");
+/* @import url("css/style-plugin-contactform7.css"); */
+@import url("css/style-plugin-loginwidget.css");
 
-/*
- * remove border from the left and right sidebar border
- * @link https://divibooster.com/removing-the-divi-theme-dividing-line/
- */
-.container:before {
-    background-color: transparent !important;
-}
 
-.et_pb_widget_area_right {
-    border-left: 0 !important;
-}
-
-.et_pb_widget_area_left {
-    border-right: 0 !important;
-}
-
-/*
- * remove bottom border from the header
- * @link https://divibooster.com/removing-the-divi-header-bottom-border/
- */
-/*
-#main-header {
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
-    box-shadow: none !important;
-}
-*/
-
-.et_header_style_centered #logo a {
-    color: #f8f8f8 !important;
-}
-
-a.logo-a {
-    color: #222 !important;
-}
-
-/* Responsive Styles Tablet And Below */
-@media all and (max-width: 980px) {
-
-    .blog-description {
-        display: none;
-    }
-}
-
-.wpcf7-text, .wpcf7-textarea, .wpcf7-captchar {
-    background-color: #eee !important;
-    border: none !important;
-    width: 100% !important;
-    -moz-border-radius: 0 !important;
-    -webkit-border-radius: 0 !important;
-    border-radius: 0 !important;
-    font-size: 14px;
-    color: #999 !important;
-    padding: 16px !important;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.wpcf7-submit {
-    color: #24890d !important;
-    margin: 8px auto 0;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 500;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    padding: 6px 20px;
-    line-height: 1.7em;
-    background: transparent;
-    border: 2px solid;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -moz-transition: all 0.2s;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
-    margin-bottom: 2em;
-}
-
-.wpcf7-submit:hover {
-    background-color: #eee;
-    border-color: #eee;
-    padding: 6px 20px !important;
-}
-
-/* @link https://wordpress.org/plugins/login-sidebar-widget/
- * login widget start
- */
-#log_forms {
-    padding-bottom: 3em;
-}
-
-#log_forms input[type=text], #log_forms input[type=password] {
-    height: 40px !important;
-    margin: 0;
-    padding: 0.7em;
-    border: 1px solid #ddd;
-    color: #666;
-    font-size: 14px;
-    line-height: normal !important;
-    width: 100%;
-}
-
-#log_forms input[type=submit] {
-    /*    position: absolute;
-        top: 0;
-        right: 0;
-    */
-    height: 40px !important;
-    margin: 1em auto;
-    padding: 0.7em;
-    border: 1px solid #ddd;
-    color: #666;
-    font-size: 14px;
-    line-height: normal !important;
-    float: right;
-    width: 70px;
-
-    -webkit-border-top-right-radius: 3px;
-    -moz-border-radius-topright: 3px;
-    border-top-right-radius: 3px;
-    -webkit-border-bottom-right-radius: 3px;
-    -moz-border-radius-bottomright: 3px;
-    border-bottom-right-radius: 3px;
-    background-color: #ddd;
-}
-
-/** login widget end */
 

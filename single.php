@@ -112,8 +112,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
 
 					?>
-						<div class="nav-previous alignleft"><?php previous_post_link( '%link' , '&laquo; Previous' );?></div>
-						<div class="nav-next alignright"><?php next_post_link( '%link' ,'Next &raquo;' );?></div>
+						<div class="nav-previous alignleft"><?php previous_post_link( '%link', '&laquo; %title' );?></div>
+						<div class="nav-next alignright"><?php next_post_link( '%link' ,'%title &raquo;' );?></div>
 
 
 					</div> <!-- .entry-content -->

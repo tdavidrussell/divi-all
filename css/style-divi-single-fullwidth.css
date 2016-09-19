@@ -1,0 +1,12 @@
+
+/** make single post fullwidth by default
+ * http://www.totherescue.ca/divi-blog-posts-full-width-default/
+**/
+/*
+.single-post .container:before {
+display: none!important;
+}
+.single-post #left-area {
+width: 100% !important;
+}
+*/

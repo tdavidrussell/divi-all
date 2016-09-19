@@ -1,0 +1,47 @@
+/*
+ * Login Widget With Shortcode
+ *
+ */
+
+
+/* @link https://wordpress.org/plugins/login-sidebar-widget/
+ * login widget start
+ */
+#log_forms{
+    padding-bottom: 3em;
+}
+#log_forms input[type=text], #log_forms input[type=password]{
+    height: 40px !important;
+    margin: 0;
+    padding: 0.7em;
+    border: 1px solid #ddd;
+    color: #666;
+    font-size: 14px;
+    line-height: normal !important;
+    width: 100%;
+}
+#log_forms input[type=submit]{
+    /*    position: absolute;
+        top: 0;
+        right: 0;
+    */
+    height: 40px !important;
+    margin: 1em auto;
+    padding: 0.7em;
+    border: 1px solid #ddd;
+    color: #666;
+    font-size: 14px;
+    line-height: normal !important;
+    float: right;
+    width: 70px;
+
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #ddd;
+}
+/** login widget end */
+
