@@ -58,5 +58,7 @@
 /* @import url("css/style-plugin-contactform7.css"); */
 @import url("css/style-plugin-loginwidget.css");
 
-
+#wp-admin-bar-et-use-visual-builder{
+    display: none !important;
+}
 
