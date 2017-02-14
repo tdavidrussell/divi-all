@@ -1,0 +1,44 @@
+
+/*
+ * remove border from the left and right sidebar border
+ * @link https://divibooster.com/removing-the-divi-theme-dividing-line/
+ */
+.container:before {
+    background-color: transparent !important;
+}
+
+.et_pb_widget_area_right {
+    border-left: 0 !important;
+}
+
+.et_pb_widget_area_left {
+    border-right: 0 !important;
+}
+
+/*
+ * remove bottom border from the header
+ * @link https://divibooster.com/removing-the-divi-header-bottom-border/
+ */
+/*
+#main-header {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+*/
+
+.et_header_style_centered #logo a {
+    color: #f8f8f8 !important;
+}
+
+a.logo-a {
+    color: #222 !important;
+}
+
+/* Responsive Styles Tablet And Below */
+@media all and (max-width: 980px) {
+
+    .blog-description {
+        display: none;
+    }
+}
