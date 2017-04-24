@@ -6,6 +6,8 @@
   \- Bug fixed   
   ! Known issue / missing feature   
 
+#### 20170424.1
+Tested: WordPress 4.7.4
 
 #### 20160808.1
 * Changed: change how the css file are loaded, makes easy change css config
