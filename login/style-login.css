@@ -1,28 +1,36 @@
-body.login {
-	background-color: #0069cc;
-	min-height:600px;
+/**
+ * Basic changes
+ * balance the a tags on the bottom of page
+ * remove WP logo
+ *
+ */
+
+body {
+    /* background-color: black; */
+}
+
+.login h1 a {
+    background-image: none;
+    background-size: 0;
+    height: 0;
+}
+
+#loginform {
+    border-radius: 15px;
 
 }
 
-#loginform{
-	border-radius: 15px;
+p.message {
+    border-radius: 6px;
 
 }
 
-
-
-
-p.message{
-	border-radius: 6px;
-
+#nav a, #backtoblog a {
+    background-color: #eaeaea;
+    border: 1px solid #e1e1e1;
+    padding: 6px;
+    margin: 0;
+    clear: both;
+    display: block;
+    text-align: center;
 }
-#nav a, #backtoblog a{
-	background-color: #000;
-	border: 1px solid #9b9b9b;
-	padding: 6px;
-	margin: 0;
-	clear: both;
-	display: block;
-	text-align: center;
-}
-
