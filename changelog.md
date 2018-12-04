@@ -6,11 +6,15 @@
   \- Bug fixed   
   ! Known issue / missing feature   
 
+#### 20181203.1
+* Changed: repo location
+* Updated: description, readme
+
 #### 20170712.1
-Tested: WordPress 4.8
-Added: social icons links now open in new tab
-Added: login style sheet 
-	/login/*.css
+* Tested: WordPress 4.8
+* Added: social icons links now open in new tab
+* Added: login style sheet 
+  		/login/*.css
 
 
 #### 20170424.1

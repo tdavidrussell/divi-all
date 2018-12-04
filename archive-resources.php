@@ -11,16 +11,16 @@
 get_header();
 ?>
 
-	<div id="main-content">
-		<div class="container">
-			<div id="content-area" class="clearfix">
-				<div id="left-area">
+    <div id="main-content">
+        <div class="container">
+            <div id="content-area" class="clearfix">
+                <div id="left-area">
 					<?php
 					if ( have_posts() ) :
 						while ( have_posts() ) : the_post();
 							$post_format = et_pb_post_format(); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post' ); ?>>
+                            <article id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post' ); ?>>
 
 								<?php
 								$thumb = '';
@@ -40,19 +40,19 @@ get_header();
 										printf( '<div class="et_main_video_container">
 									%1$s
 								</div>', $first_video );
-									elseif ( ! in_array( $post_format, array( 'gallery' ) ) && 'on' === et_get_option( 'divi_thumbnails_index', 'on' ) && '' !== $thumb ) : ?>
-										<a href="<?php the_permalink(); ?>">
+                                    elseif ( ! in_array( $post_format, array( 'gallery' ) ) && 'on' === et_get_option( 'divi_thumbnails_index', 'on' ) && '' !== $thumb ) : ?>
+                                        <a href="<?php the_permalink(); ?>">
 											<?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ); ?>
-										</a>
-										<?php
-									elseif ( 'gallery' === $post_format ) :
+                                        </a>
+									<?php
+                                    elseif ( 'gallery' === $post_format ) :
 										et_gallery_images();
 									endif;
 								} ?>
 
 								<?php if ( ! in_array( $post_format, array( 'link', 'audio', 'quote' ) ) ) : ?>
 									<?php if ( ! in_array( $post_format, array( 'link', 'audio' ) ) ) : ?>
-										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 									<?php endif; ?>
 
 									<?php
@@ -66,8 +66,8 @@ get_header();
 									?>
 								<?php endif; ?>
 
-							</article> <!-- .et_pb_post -->
-							<?php
+                            </article> <!-- .et_pb_post -->
+						<?php
 						endwhile;
 
 						if ( function_exists( 'wp_pagenavi' ) ) {
@@ -79,14 +79,14 @@ get_header();
 						get_template_part( 'includes/no-results', 'index' );
 					endif;
 					?>
-				</div>
-				<!-- #left-area -->
+                </div>
+                <!-- #left-area -->
 
 				<?php get_sidebar(); ?>
-			</div>
-			<!-- #content-area -->
-		</div>
-		<!-- .container -->
-	</div> <!-- #main-content -->
+            </div>
+            <!-- #content-area -->
+        </div>
+        <!-- .container -->
+    </div> <!-- #main-content -->
 
 <?php get_footer(); ?>

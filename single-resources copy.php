@@ -94,8 +94,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<!-- #left-area -->
 
 				<?php if ( 'et_full_width_page' === $page_layout ) {
-					et_pb_resources_meta_box();
-					//et_pb_portfolio_meta_box();
+					et_pb_portfolio_meta_box();
 				} ?>
 
 				<?php get_sidebar(); ?>

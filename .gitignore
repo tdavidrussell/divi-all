@@ -2,6 +2,7 @@
 .DS_Store
 .Spotlight-V100
 .Trashes
+._*
 *~
 .svn
 .svnignore
@@ -17,10 +18,13 @@ Thumbs.db
 desktop.ini
 
 # IDE Stuff
-
 ## phpStorm
 /.idea
 .idea
+.idea/*
+*.iml
+*.ipr
+*.iws
 
 ## SublimeText
 *.sublime-workspace
@@ -32,6 +36,7 @@ deploy.sh
 ## Common Web Site Files ##
 !.gitignore
 .htaccess
+*.log
 archive/
 build/
 debug/
