@@ -7,28 +7,28 @@
  *
  * @wordpress-theme
  * Theme Name:          Divi All
- * Theme URI:           http://timrussell.com/wordpress-themes
+ * Theme URI:           https://gitlab.com/tdavidrussell/divi-all
  * Description:         Divi All Child Theme. Parent Theme Designed Elegant Themes http://www.elegantthemes.com/.
- * Version:             20170712.1
+ * Version:             20181203.1
  * Author:              Tim Russell
- * Author URI:          http://timrussell.com/
+ * Author URI:          https://timrussell.com/
  * License:             GPL-2.0+
  * License URI:         http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:         divi-all
  * Domain Path:         /languages
  *
- * GitHub Theme URI:    https://github.com/tdavidrussell/divi-all
- * GitHub Branch:       master
+ * GitLab Theme URI:    https://gitlab.com/tdavidrussell/divi-all
+ * GitLab Branch:       master
  *
  * Tags:                child theme,
  *
  * Template:            Divi
  *
- * Requires WP:         4.0
- * Requires PHP:        5.3
+ * Requires WP:         4.8
+ * Requires PHP:        5.6
  *
- * Support URI:         http://timrussell.com/wordpress-themes
- * Documentation URI:   http://timrussell.com/wordpress-themes
+ * Support URI:         https://gitlab.com/tdavidrussell/divi-all
+ * Documentation URI:   https://gitlab.com/tdavidrussell/divi-all
  *
  * Released under the GPL license
  * http://www.opensource.org/licenses/gpl-license.php
@@ -49,7 +49,8 @@
  * **********************************************************************
 */
 /** import the parent css **/
-@import url("../Divi/style.css");
+/*   @import url("../Divi/style.css"); */
+
 @import url("css/style-divi.css");
 /* @import url("css/style-divi-archive2grid.css"); */
 @import url("css/style-divi-header-noborder.css");
@@ -62,3 +63,41 @@
     display: none !important;
 }
 
+/** start block -> stop forcing width of featured images **/
+.post-thumbnail img {
+    display: block;
+    width: auto;
+    margin: auto;
+}
+img {
+    display: block;
+    width: auto;
+    margin: auto;
+}
+/** stop block -> stop forcing width of featured images **/
+
+
+#footer {
+    color: #f8f8f8;
+}
+/** fixed footer bottom **/
+#footer-bottom {
+    background-color: #232323;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 9;
+}
+p#footer-info {
+    width: 100%;
+    text-align: center;
+}
+/* footer widget text, ie category count was black on black */
+#footer ul li{
+    color: #f8f8f8 !important;
+}
+/** change the hover color on footer links **/
+#footer-info a:hover{
+    color: #f8f8f8;
+}
