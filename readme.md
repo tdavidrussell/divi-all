@@ -17,6 +17,10 @@ Please review the functions.php and comment out the items not needed.
  
 [Divi Parent Theme](http://www.elegantthemes.com/) REQUIRED!
 
+## License   
+This program is distributed in the hope that it will be useful, but WITHOUT ANY 
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR 
+A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 ## Installation
 
