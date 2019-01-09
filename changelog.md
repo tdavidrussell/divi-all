@@ -6,6 +6,10 @@
   \- Bug fixed   
   ! Known issue / missing feature   
 
+#### 20190109.1
+* Updated: for Divi 3.19.4
+* Updated: private note issue
+
 #### 20181203.1
 * Changed: repo location
 * Updated: description, readme
