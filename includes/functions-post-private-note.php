@@ -1,11 +1,9 @@
 <?php
 
 
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
 
 
 /**
@@ -24,18 +22,19 @@ add_action( 'add_meta_boxes', 'ronepn_add_meta_box', 1 );
 
 function ronepn_meta_html2( $post ) {
 	wp_nonce_field( '_rone_pn_meta_nonce', 'rone_pn_meta_nonce' ); ?>
-	<p>
-		<!--
+    <p>
+        <!--
         <label for="rrone-privatenote"><?php _e( 'Note', 'text-domain' ); ?></label><br>
         -->
-		<textarea name="rone_privatenote" id="rone_privatenote"><?php echo ronepn_get_meta( 'rone_privatenote' ); ?>"></textarea>
-	</p>
-<? } //endfunction
+        <textarea name="rone_privatenote" id="rone_privatenote"><?php echo ronepn_get_meta( 'rone_privatenote' ); ?>"></textarea>
+    </p>
+	<?php
+} //endfunction
 
 function ronepn_meta_html( $post ) {
 
 	wp_nonce_field( '_rone_pn_meta_nonce', 'rone_pn_meta_nonce' ); ?>
-	<!--
+    <!--
     <p><label for="rone-privatenote"><?php _e( 'Note', 'text-domain' ); ?></label></p><br>
     -->
 	<?php
@@ -48,7 +47,8 @@ function ronepn_meta_html( $post ) {
 		'teeny'         => false
 	) );
 	?>
-<? } //endfunction
+	<?php
+} //endfunction
 
 
 function ronepn_get_meta( $value ) {
@@ -80,7 +80,6 @@ function ronepn_meta_save( $post_id ) {
 }
 
 add_action( 'save_post', 'ronepn_meta_save' );
-
 
 
 ?>

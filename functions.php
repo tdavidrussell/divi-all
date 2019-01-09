@@ -44,6 +44,18 @@ function rone_theme_setup() {
 }
 add_action( 'after_setup_theme', 'rone_theme_setup' );
 */
+
+/**
+ * enqueue parent theme css, instead doing @import
+ * Faster than @import
+ * @link https://kovshenin.com/2014/child-themes-import/
+ */
+function rone_enqueue_child_theme_css() {
+	wp_enqueue_style( 'ro-parent-css', get_template_directory_uri() . '/style.css' );
+}
+
+add_action( 'wp_enqueue_scripts', 'rone_enqueue_child_theme_css' );
+
 /**
  * Replace the original footer credits
  *

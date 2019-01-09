@@ -51,16 +51,6 @@ function rone_theme_add_editor_styles() {
 
 add_action( 'init', 'rone_theme_add_editor_styles' );
 
-/**
- * enqueue parent theme css, instead doing @import
- * Faster than @import
- * @link https://kovshenin.com/2014/child-themes-import/
- */
-function rone_enqueue_child_theme_css() {
-	wp_enqueue_style( 'ro-parent-css', get_template_directory_uri() . '/style.css' );
-}
-
-add_action( 'wp_enqueue_scripts', 'rone_enqueue_child_theme_css' );
 
 /**
  * Load a custom.css style sheet, if it exists in a child theme.
